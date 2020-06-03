@@ -90,15 +90,6 @@ resource "azurerm_public_ip" "catapp-pip" {
   domain_name_label   = "${var.prefix}-meow"
 }
 
-resource "azurerm_managed_disk" "catdisk" {
-  name                 = "${var.prefix}-catdisk"
-  location             = var.location
-  resource_group_name  = azurerm_resource_group.myresourcegroup.name
-  storage_account_type = "Premium_LRS"
-  create_option        = "Empty"
-  disk_size_gb         = "1024"
-}
-
 resource "azurerm_virtual_machine" "catapp" {
   name                = "${var.prefix}-meow"
   location            = var.location
