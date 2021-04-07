@@ -1,6 +1,6 @@
 # HashiCat - Azure
 
-A HashiCorp Terraform built web application for use in HashiCorp demos and workshops.
+A simple, static web application deployed entirely by Terraform for use in HashiCorp demos and workshops.
 
 ### Prerequisites
 
