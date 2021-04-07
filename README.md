@@ -4,7 +4,7 @@ A HashiCorp Terraform built web application for use in HashiCorp demos and works
 
 ### Prerequisites
 
-<img src="https://logodix.com/logo/745893.png" alt="Azure" width="200"/><img src="https://www.datocms-assets.com/2885/1603728375-blog-library-product-terraform-cloud.jpg" alt="Terraform Cloud" width="200"/>
+<img src="https://logodix.com/logo/745893.png" alt="Azure" width="200"/> &nbsp; &nbsp; &nbsp; <img src="https://www.datocms-assets.com/2885/1603728375-blog-library-product-terraform-cloud.jpg" alt="Terraform Cloud" width="200"/>
 
 First and foremost, an [Azure](https://azure.microsoft.com/en-us/) account will be needed. The Terraform configuration will need values for the following variables for which Azure resources should be created: 
 - subscription_id
