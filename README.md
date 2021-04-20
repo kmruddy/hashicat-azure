@@ -20,7 +20,7 @@ The only other requirement would be input for the variable of "prefix" which is 
 
 ### Gratuitous Cat Image
 
-[![Cat Image](http://placekitten.com/g/400/200)]
+![Cat Image](http://placekitten.com/g/400/200)
 
 ### Test Status
 
