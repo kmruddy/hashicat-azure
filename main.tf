@@ -106,7 +106,7 @@ resource "azurerm_linux_virtual_machine" "catapp" {
   name                = "${var.prefix}-meow"
   location            = azurerm_resource_group.myresourcegroup.location
   resource_group_name = azurerm_resource_group.myresourcegroup.name
-  vm_size             = var.vm_size
+  size             = var.vm_size
 
   network_interface_ids = [
     azurerm_network_interface.catapp-nic.id,
@@ -121,22 +121,16 @@ resource "azurerm_linux_virtual_machine" "catapp" {
     version   = var.image_version
   }
 
-  storage_os_disk {
+  os_disk {
     name              = "${var.prefix}-osdisk"
     managed_disk_type = "Standard_LRS"
     caching           = "ReadWrite"
-    create_option     = "FromImage"
   }
 
-  os_profile {
-    computer_name  = var.prefix
-    admin_username = var.admin_username
-    admin_password = var.admin_password
-  }
-
-  os_profile_linux_config {
-    disable_password_authentication = false
-  }
+  computer_name  = var.prefix
+  admin_username = var.admin_username
+  admin_password = var.admin_password
+  disable_password_authentication = false
 }
 
 # We're using a little trick here so we can run the provisioner without
@@ -153,7 +147,7 @@ resource "azurerm_linux_virtual_machine" "catapp" {
 # Run the deploy_app.sh script.
 resource "null_resource" "configure-cat-app" {
   depends_on = [
-    azurerm_virtual_machine.catapp,
+    azurerm_linux_virtual_machine.catapp,
   ]
 
   # Terraform 0.11
