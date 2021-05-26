@@ -112,8 +112,6 @@ resource "azurerm_linux_virtual_machine" "catapp" {
     azurerm_network_interface.catapp-nic.id,
   ]
   
-  delete_os_disk_on_termination = "true"
-
   source_image_reference {
     publisher = var.image_publisher
     offer     = var.image_offer
@@ -123,7 +121,7 @@ resource "azurerm_linux_virtual_machine" "catapp" {
 
   os_disk {
     name              = "${var.prefix}-osdisk"
-    managed_disk_type = "Standard_LRS"
+    storage_account_type = "Standard_LRS"
     caching           = "ReadWrite"
   }
 
